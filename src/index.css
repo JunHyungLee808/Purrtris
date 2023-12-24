@@ -98,7 +98,7 @@ body {
 }
 
 .cell.O {
-  background-image: url('ui/faces/face_23.png');
+  background-image: url('ui/faces/face_40.png');
 } 
 
 .cell.S {
@@ -117,9 +117,83 @@ footer {
   background-color: black;
   color: white;
   text-align: center;
-  padding: 10px 0;
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
+  opacity: 0; 
+  transition: opacity 0.5s ease;
+}
+
+footer:hover {
+  text-decoration: pink;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.mobile-only-controls {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    display: grid; /* Ensure this is a grid container */
+    grid-template-areas:
+      ". title ."
+      ". game ."
+      ". controls .";
+    grid-template-columns: 1fr; /* Adjust for smaller screens */
+    grid-template-rows: auto; /* Adjust the row sizes as needed */
+  }
+
+  .mobile-only-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .mobile-only-controls img {
+    margin: 5px; 
+  }
+  
+  .middle-row {
+    height: 68px;
+    display: flex;
+    justify-content: center; 
+  }
+
+  .controls {
+    grid-area: controls;
+    justify-self: center; 
+    align-self: center; 
+  }
+
+  .upcoming {
+    display: none;
+  }
+
+  .preview, .spacer {
+    display: none;
+  }
+
+  .title {
+    transform: scale(0.5); 
+  }
+
+  .cell {
+    width: 30px;
+    aspect-ratio: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .title {
+    transform: scale(0.5);
+  }
+
+  .cell {
+    width: 30px;
+    aspect-ratio: 1;
+  }
 }

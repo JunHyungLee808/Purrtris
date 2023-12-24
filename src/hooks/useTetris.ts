@@ -24,7 +24,6 @@ export function useTetris() {
   const [isCommitting, setIsCommitting] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [tickSpeed, setTickSpeed] = useState<TickSpeed | null>(null);
-
   const [
     { board, droppingRow, droppingColumn, droppingBlock, droppingShape },
     dispatchBoardState,
@@ -187,12 +186,12 @@ export function useTetris() {
 
     const handleKeyUp = (event: KeyboardEvent) => {
       event.preventDefault();
-      
+
       if (event.key === 'Escape') {
         gameState.isPaused = !gameState.isPaused;
       }
 
-      if (event.key === 'ArrowDown') {
+      if (event.key === 'ArrowDown' && !gameState.isInstantDropping && !gameState.isPaused) {
         setTickSpeed(TickSpeed.Normal);
       }
 
