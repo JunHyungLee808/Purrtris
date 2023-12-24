@@ -1,0 +1,125 @@
+.app {
+  display: grid;
+  grid-template-areas:
+    ". title ."
+    ". game controls";
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+.controls {
+  grid-area: controls;
+}
+
+.upcoming {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 10px;
+  height: 325px;
+  background-image: url('./ui/queue.png');
+  background-repeat: no-repeat;
+}
+
+.spacer {
+  margin-bottom: 70px;
+}
+
+.preview {
+  margin-left: 37px;
+  margin-bottom: 5px;
+}
+
+.background {
+  transform: scale(0.55);
+  visibility: hidden;
+}
+
+.title {
+  grid-area: title;
+  transform: scale(0.55);
+  margin: auto;
+}
+
+button {
+  padding: 4px;
+}
+
+body {
+  background-image: url('./ui/backgrounds/background_0.png');
+  background-repeat: repeat;
+}
+
+.grid {
+  border: 2px solid black;
+  border-radius: 3px;
+  user-select: none;
+  margin: auto;
+  grid-area: game;
+}
+
+.newGame {
+ border-radius: 2px; 
+}
+
+.newGame:hover {
+  background-color: beige;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 30px;
+  aspect-ratio: 1;
+  border: 1px solid #ddd; 
+  background-color: rgba(33, 36, 39, 0.5);
+  border-radius: 3px;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.cell.hidden {
+  visibility: hidden;
+}
+
+.cell.I {
+  background-image: url('ui/faces/face_00.png');
+}
+
+.cell.J {
+  background-image: url('ui/faces/face_06.png');
+}
+
+.cell.L {
+  background-image: url('ui/faces/face_02.png');
+}
+
+.cell.O {
+  background-image: url('ui/faces/face_23.png');
+} 
+
+.cell.S {
+  background-image: url('ui/faces/face_29.png');
+} 
+
+.cell.T {
+  background-image: url('ui/faces/face_18.png');
+}
+
+.cell.Z {
+  background-image: url('ui/faces/face_11.png');
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
