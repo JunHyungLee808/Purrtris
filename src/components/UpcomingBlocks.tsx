@@ -1,5 +1,4 @@
 import { Block, SHAPES } from '../types'
-import Queue from '../ui/queue.png'
 
 interface Props {
   upcomingBlocks: Block[];
